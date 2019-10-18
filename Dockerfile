@@ -13,6 +13,8 @@ ENV AGENT=agent
 
 WORKDIR /apache-flume
 
+RUN mkdir -p external
+
 COPY ./*.jar ./lib/
 
 CMD [ "sh","-c", "./bin/flume-ng agent -n ${AGENT} -c conf -f conf/flume-conf.properties" ]
